@@ -22,9 +22,22 @@ sudo apt-get install -y rlwrap
 
 # Install emacs24
 # https://launchpad.net/~cassou/+archive/emacs
-sudo apt-add-repository -y ppa:cassou/emacs
-sudo apt-get update
-sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
+#sudo apt-add-repository -y ppa:cassou/emacs
+#sudo apt-get update
+#sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
+
+#Install tmux
+sudo apt-get install -y tmux
+# Install vim
+sudo apt-get install -y vim
+
+# pull down my dotvim, and link
+git clone https://github.com/uvesten/dotvim .vim
+cd .vim
+git submodule init
+git submodule update
+cd ..
+ln -sb .vim/.vimrc
 
 # git pull and install dotfiles as well
 cd $HOME
